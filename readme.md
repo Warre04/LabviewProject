@@ -2,9 +2,9 @@
 
 ## Inputs	
   - RFID lezer
-  - keypad
+  - Keypad voor 'gasten'
   - Worden gelogd in CSV met huidige timestamp
-  - Keypad codes kunnen aangemaakt worden en gekoppeld aan een naam (input csv?)
+  - Keypad codes kunnen aangemaakt worden en gekoppeld aan een naam, zal alleen werken in een bepaalde tijdsperiode (input csv?)
 
 ## Outputs
   - OLED schermpje
