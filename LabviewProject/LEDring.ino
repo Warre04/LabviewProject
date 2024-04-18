@@ -1,13 +1,20 @@
 void LedRingSetup(){
       FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS); 
+      LedAllOff();
 }
 
-void LedRingCycle() {
-  for (int i = 0; i <= NUM_LEDS; i++) {
-    leds[i] = CRGB::Green;
+void LedRing(int ledPin, int color) {
+    leds[ledPin].setHue(color);
     FastLED.show();
-    delay(5);
+}
+void LedOff(int ledPin){
+      leds[ledPin] = CRGB::Black;
+      FastLED.show();
+}
+void LedAllOff(){
+  for (int i = 0; i<NUM_LEDS;i++){
     leds[i] = CRGB::Black;
-    FastLED.show();
   }
+  FastLED.show();
+
 }
