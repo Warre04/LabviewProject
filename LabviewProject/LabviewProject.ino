@@ -5,10 +5,12 @@ void setup() {
   LedRingSetup();
   RFIDsetup();
   Serial.begin(19200);
+  Serial.setTimeout(5);
 }
 
 void loop() {
   if (Serial.available() > 0) {
+
     String input = Serial.readString();
     if (input.equals("deurOpen")) {
       digitalWrite(deurPin, HIGH);
@@ -18,6 +20,9 @@ void loop() {
       LedAllOff();
     } else if (input.startsWith("led:")) {
       LedRing(input.substring(4, 6).toInt(), input.substring(6, 9).toInt());
+    } else if (input.startsWith("ledAllOn:")) {
+      
+      LedRingAllOn(input.substring(9, 12).toInt());
     } else if (input.startsWith("ledOff:")) {
       LedOff(input.substring(7, 9).toInt());
     }
