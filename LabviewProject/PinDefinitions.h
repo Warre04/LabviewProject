@@ -39,6 +39,4 @@ bool ledRingIdle=false;
 bool ledRingAccess=false;
 bool ledRingAddAccess=false;
 
-
-
 #endif

@@ -10,7 +10,6 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
-
     String input = Serial.readString();
     if (input.equals("deurOpen")) {
       digitalWrite(deurPin, HIGH);
@@ -39,6 +38,8 @@ void loop() {
   printKeypadIfPosible();
   runRFID();
 
+
+  //doordat delay niet gebruikt kan worden en labvieuw te traag is voor de animaties gebruiken we millis en een boolean en staan de funcities voor de ledring animaties in de main
   addAccesKey();
   access();
   noAccess();
