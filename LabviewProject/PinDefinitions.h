@@ -33,6 +33,12 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS); // creat
 
 MFRC522 mfrc522(SS_PIN, RST_PIN); 
 
+//Global Var for LEDRING modes
+int NoAccessFlashes=0;
+bool ledRingIdle=false;
+bool ledRingAccess=false;
+bool ledRingAddAccess=false;
+
 
 
 #endif
