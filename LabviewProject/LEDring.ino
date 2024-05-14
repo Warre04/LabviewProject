@@ -1,31 +1,31 @@
-void LedRingSetup() {
+void LedRingSetup() {//start de ledring
   FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);
   LedAllOff();
 }
 
-void LedRing(int ledPin, int color) {
+void LedRing(int ledPin, int color) {//zet de kleur van ledpin naar een hue waarde 
   leds[ledPin].setHue(color);
   FastLED.show();
 }
-void LedRingAllOn(int color) {
+void LedRingAllOn(int color) {// zet alle leds naar een hue waarde 
   for (int i = 0; i < NUM_LEDS; i++) {
     leds[i].setHue(color);
   }
   FastLED.show();
 }
 
-void LedOff(int ledPin) {
+void LedOff(int ledPin) {// zet ledPin uit
   leds[ledPin] = CRGB::Black;
   FastLED.show();
 }
-void LedAllOff() {
+void LedAllOff() {// zet alle leds uit
   for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Black;
   }
   FastLED.show();
 }
 
-void noAccess() {
+void noAccess() {//no access animatie
   static bool ledOn = false;
   static unsigned long prevMillis = 0;
   unsigned long currMillis = millis();
@@ -42,7 +42,7 @@ void noAccess() {
   }
 }
 
-void idle() {
+void idle() {// idle animatie
   static unsigned long prevMillis = 0;
   static int LED = 0;
   static int Color = 0;
@@ -61,7 +61,7 @@ void idle() {
   }
 }
 
-void access() {
+void access() {// access animatie
   static unsigned long prevMillis = 0;
   static int LED = 0;
   static bool AllLedOn = false;
@@ -87,7 +87,7 @@ void access() {
   }
 }
 
-void addAccesKey() {
+void addAccesKey() { // add access / add key animatie
   static unsigned long prevMillis = 0;
   static int LED = 0;
   static bool ledOn = false;
@@ -115,7 +115,7 @@ void addAccesKey() {
   }
 }
 
-void allStatusOff() {
+void allStatusOff() { // zet alle animaties uit en schakel alle leds uit
   NoAccessFlashes = 0;
   ledRingIdle = false;
   ledRingAccess = false;
